@@ -31,7 +31,7 @@ struct AboutView: View {
                                 )
                             )
                         
-                        Text("v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0") (Build \(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "2026.1"))")
+                        Text("v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")")
                             .font(.body)
                             .foregroundStyle(AppTheme.textSecondary)
                             .padding(.horizontal, 12)
