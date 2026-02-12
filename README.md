@@ -4,101 +4,85 @@
 ![Platform](https://img.shields.io/badge/Platform-macOS_14.0+-000000.svg?style=flat&logo=apple)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-**SysOps Toolbox** is a comprehensive, native macOS application designed for System Administrators, DevOps Engineers, and Network Professionals. Built with **SwiftUI**, it combines essential network utilities, calculators, and cloud tools into a single, modern, and high-performance interface.
+> **Requirement**: macOS 14.0 (Sonoma) or newer.
 
-> **System Requirements**: macOS 14.0 (Sonoma) or later.
+![Main Interface](assets/screenshot.png)
 
-![Screenshot](assets/screenshot.png)
+## Why SysOps Toolbox?
 
-## ✨ Visual Feature Highlights
+I built **SysOps Toolbox** because I was tired of opening 10 browser tabs just to check my public IP, test a port, or calculate a subnet. I wanted something **native, fast, and private** that lived right on my Mac.
 
-### 🖥️ Network Dashboard (New)
-*Your central command center for network monitoring.*
-![Network Monitor](assets/screenshot.png)
+No ads, no tracking, just the tools we use every day as DevOps & Network Engineers, packaged in a clean SwiftUI interface.
 
-| Feature | Description |
+---
+
+## 🚀 What's Inside?
+
+### 1. Network Dashboard (The "Command Center")
+Everything you need to know about your connection, right now.
+*   **Real-time Bandwidth**: See your download/upload speeds instantly with a smooth visual chart.
+*   **Connectivity Health**: A rolling 60-second history log. Green is good, Red means packet loss.
+*   **Process Monitor**: Spot exactly which app is eating your bandwidth.
+
+![Network Monitor](assets/screenshot_monitor.png)
+
+### 2. The "Swiss Army Knife" Tools
+
+| Tool | What it does |
 | :--- | :--- |
-| **Real-time Bandwidth** | Smooth gradient area chart visualizing Download/Upload speeds in Mbps. |
-| **Connectivity Grid** | 60-second history of connection stability (Green = Good, Red = Loss). |
-| **Process Monitor** | Identify which apps are hogging your bandwidth instantly. |
+| **Docker Converter** | **Stop writing Compose files by hand.** Paste a `docker run` command, get a clean `docker-compose.yml` back instantly. |
+| **SSH Tunneling** | Visual SSH forwarding. No more memorizing `-L` or `-R` flags. Just fill the boxes and connect. |
+| **SSL Inspector** | Paste a domain, get the full cert chain and expiry date. Never let a cert expire again. |
+| **Subnet Calc** | Visualizes CIDR blocks so you don't cut a subnet too small. |
 
----
-
-### 📡 Network Discovery
-*Scan, Map, and Analyze your network with precision.*
-
-| **Live Latency Monitor** | **Visual Traceroute** |
-| :---: | :---: |
-| ![Latency Monitor](assets/screenshot_monitor.png) | *Map network hops with geolocation data.* |
-| Real-time ping monitoring to multiple targets (Google, Cloudflare, Gateway) with heartbeat graphs. | (Coming Soon: Visual Map Integration) |
-
----
-
-### ☁️ Cloud & DevOps Tools
-*Essential utilities for modern infrastructure management.*
-
-| **Docker Converter** | **SSH Tunnel Builder** |
+| **Docker Magic** | **Tunnel Builder** |
 | :---: | :---: |
 | ![Docker Converter](assets/screenshot_docker.png) | ![SSH Tunnel](assets/screenshot_ssh.png) |
-| Convert `docker run` to `docker-compose.yml` instantly. | Visual interface for Local/Remote Port Forwarding. |
 
 ---
 
 ### 🛡️ Security & Utilities
-*   **SSL Inspector**: Analyze certificate chains and expiry dates. `![SSL](assets/screenshot_ssl.png)`
-*   **RAID Calculator**: Plan storage for RAID 0/1/5/6/10 & **ZFS RAID-Z**. `![RAID](assets/raid.png)`
-*   **Password Gen**: Create cryptographically secure passwords.
-*   **Subnet Calc**: Visual CIDR and subnet division.
+Small but mighty tools included:
+*   **RAID Calculator**: Planning a storage server? Calculate usable space for ZFS or RAID 5/6/10.
+*   **Password Gen**: Generate cryptographically secure passwords locally.
+*   **Visual Traceroute**: (Coming Soon) Map your packets across the globe.
 
-## 🪟 Windows Port (Coming Soon)
-We are planning a native Windows version!
-*   Documentation and Design Port prompts are available in `docs/windows_reference/`.
-*   Includes `WINDOWS_PORT_PROMPT.md` for AI-assisted porting.
+---
 
-## 🚀 Installation
+## 📦 How to Install
 
-### Pre-built Binary
-Download the latest `.dmg` or `.app` from the [Releases](https://github.com/nghianguyen98/sysops-toolbox/releases) page.
+### Option 1: The Easy Way (Recommended)
+Download the latest ready-to-use app (`.dmg` or `.app`) from the **[Releases Page](https://github.com/nghianguyen98/sysops-toolbox/releases)**.
 
-> **Note**: If you see "App is damaged", run this command in Terminal:
-> `xattr -cr /Applications/SysOpsToolbox.app`
+*Note: If macOS complains the app is "damaged" (because I haven't paid Apple $99/year yet 😅), just run this one-liner in Terminal:*
+```bash
+xattr -cr /Applications/SysOpsToolbox.app
+```
 
-### Build from Source
-Requirements:
-*   macOS 14.0+
-*   Xcode 15+
+### Option 2: Build it Yourself
+If you want to poke around the code (it's open source!):
 
-1.  Clone the repository:
+1.  **Clone it**:
     ```bash
     git clone https://github.com/nghianguyen98/sysops-toolbox.git
     cd sysops-toolbox/SysOpsToolbox
     ```
-2.  Open the project:
+2.  **Open in Xcode**:
     ```bash
     open SysOpsToolbox.xcodeproj
     ```
-3.  Build and Run (`Cmd + R`).
-
-## 🛠️ Tech Stack
-*   **Language**: Swift 5
-*   **UI Framework**: SwiftUI (MVVM)
-*   **Connectivity**: Network.framework, Foundation
-*   **Charts**: Swift Charts
-
-## 🔮 Roadmap & Coming Soon
-We are constantly working to improve SysOps Toolbox. Here are some exciting features on our roadmap:
-
-*   **Packet Sniffer**: Capture and analyze network packets (pcap) directly from the UI.
-*   **Cloud Manager**: Lightweight interface for AWS EC2/S3 and DigitalOcean Droplets.
-*   **Webhook Debugger**: Local tunnel and inspector for incoming webhooks.
-*   **Plugin System**: Community-driven extensions to add new tools.
-*   **Cross-Platform Support**: Optimizing for iPadOS and Linux.
-
-## 🤝 Contributing
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
-
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+3.  **Hit Run** (`Cmd + R`).
 
 ---
-*Crafted by Nghia Nguyen*
+
+## 🔮 What's Next?
+I'm actively working on:
+- [ ] **Windows Version**: Native port is in the works!
+- [ ] **Cloud Manager**: Quick EC2/Droplet rebooter.
+- [ ] **Packet Sniffer**: Simple `.pcap` capture UI.
+
+## 🤝 Contributing
+Found a bug? Have a cool idea? Feel free to open an Issue or PR. I'm always open to feedback!
+
+---
+*Crafted with ☕ and Swift by Nghia Nguyen.*
