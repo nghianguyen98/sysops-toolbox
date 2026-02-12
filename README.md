@@ -8,7 +8,7 @@
 
 > **System Requirements**: macOS 14.0 (Sonoma) or later.
 
-![Screenshot](screenshot.png)
+![Screenshot](assets/screenshot.png)
 
 ## ✨ Visual Feature Highlights
 
