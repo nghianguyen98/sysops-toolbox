@@ -47,7 +47,7 @@ struct SplashView: View {
                                 )
                             )
                         
-                        Text("v1.0")
+                        Text("v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0")")
                             .font(.system(.body, design: .monospaced))
                             .foregroundStyle(AppTheme.textSecondary.opacity(0.8))
                             .tracking(2)

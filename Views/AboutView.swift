@@ -31,7 +31,7 @@ struct AboutView: View {
                                 )
                             )
                         
-                        Text("v1.0.0 (Build 2026.1)")
+                        Text("v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0") (Build \(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "2026.1"))")
                             .font(.body)
                             .foregroundStyle(AppTheme.textSecondary)
                             .padding(.horizontal, 12)
@@ -46,7 +46,7 @@ struct AboutView: View {
                 VStack(spacing: 16) {
                     HStack(spacing: 16) {
                         // Website Card
-                        Button(action: { openURL(URL(string: "https://github.com/nghianguyen98/sysops-toolbox")!) }) {
+                        Button(action: { openURL(URL(string: "https://app.sysops.asia")!) }) {
                             VStack(alignment: .leading, spacing: 12) {
                                 Image(systemName: "globe")
                                     .font(.title2)
